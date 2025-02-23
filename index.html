@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ College</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: #0056b3;
+            color: #fff;
+            padding-top: 20px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+
+        header #branding {
+            float: left;
+        }
+
+        header #branding h1 {
+            margin: 0;
+        }
+
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+
+        /* Banner Styles */
+        #banner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        #banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Introduction Styles */
+        #introduction {
+            padding: 30px 0;
+            text-align: center;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Courses Styles */
+        #courses {
+            padding: 30px 0;
+            background: #f4f4f4;
+        }
+
+        .course {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .course h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+
+        /* Facilities Styles */
+        #facilities {
+            padding: 30px 0;
+            background: #fff;
+        }
+
+        .facility {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .facility img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Enrollment Styles */
+        #enrollment {
+            padding: 30px 0;
+            background: #e8491d;
+            color: #fff;
+            text-align: center;
+        }
+
+        #enrollment button {
+            background: #fff;
+            color: #e8491d;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        #enrollment button:hover {
+            background-color: #ddd;
+        }
+
+        /* Testimonials Styles */
+        #testimonials {
+            padding: 30px 0;
+            background: #f4f4f4;
+        }
+
+        .testimonial {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contact Styles */
+        #contact {
+            padding: 30px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #fff;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header #branding,
+            header nav,
+            header nav li {
+                float: none;
+                text-align: center;
+                width: 100%;
+            }
+
+            header {
+                padding-bottom: 20px;
+            }
+
+            #banner {
+                height: 300px;
+            }
+        }
+          /* Form Styles */
+          form {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #0056b3;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background: #0056b3;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #003d82;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>XYZ College</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#enrollment">Enrollment</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="banner">
+        <img src="https://source.unsplash.com/1600x500/?college,campus" alt="College Campus">
+    </section>
+
+    <section id="introduction">
+        <div class="container">
+            <h2>Welcome to XYZ College</h2>
+            <p>At XYZ College, we are dedicated to providing high-quality education and fostering a vibrant campus life. Our diverse range of courses and state-of-the-art facilities ensure that every student has the opportunity to succeed.</p>
+        </div>
+    </section>
+
+    <section id="courses">
+        <div class="container">
+            <h2>Courses Offered</h2>
+            <div class="course">
+                <h3>B.Tech</h3>
+                <p>Our Bachelor of Technology program offers a comprehensive curriculum designed to equip students with the skills and knowledge needed to excel in the field of technology.</p>
+            </div>
+            <div class="course">
+                <h3>BCS</h3>
+                <p>The Bachelor of Computer Science program focuses on the fundamentals of computer science, preparing students for careers in software development, data analysis, and more.</p>
+            </div>
+            <div class="course">
+                <h3>MBBS</h3>
+                <p>Our Bachelor of Medicine, Bachelor of Surgery program provides a rigorous medical education, training future doctors to deliver exceptional patient care.</p>
+            </div>
+            <div class="course">
+                <h3>B.Com</h3>
+                <p>The Bachelor of Commerce program offers a strong foundation in business and finance, preparing students for careers in accounting, management, and entrepreneurship.</p>
+            </div>
+            <div class="course">
+                <h3>IMBA</h3>
+                <p>The Integrated Master of Business Administration program combines undergraduate and postgraduate studies, providing a comprehensive business education.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="facilities">
+        <div class="container">
+            <h2>Our Facilities</h2>
+            <div class="facility">
+                <img src="https://source.unsplash.com/400x300/?cricket,ground" alt="Cricket Ground">
+                <h3>Cricket Ground</h3>
+                <p>Enjoy a game of cricket on our well-maintained cricket ground.</p>
+            </div>
+            <div class="facility">
+                <img src="https://source.unsplash.com/400x300/?football,ground" alt="Football Ground">
+                <h3>Football Ground</h3>
+                <p>Our football ground is perfect for both casual and competitive matches.</p>
+            </div>
+            <div class="facility">
+                <img src="https://source.unsplash.com/400x300/?gym" alt="Free Gym">
+                <h3>Free Gym</h3>
+                <p>Stay fit with our state-of-the-art gym, free for all students.</p>
+            </div>
+            <div class="facility">
+                <img src="https://source.unsplash.com/400x300/?gymkhana" alt="Gymkhana Activities">
+                <h3>Non-Interrupted Gymkhana Activities</h3>
+                <p>Participate in a variety of gymkhana activities throughout the year.</p>
+            </div>
+            <div class="facility">
+                <img src="https://source.unsplash.com/400x300/?swimming,pool" alt="Swimming Pool">
+                <h3>Swimming Pool</h3>
+                <p>Take a refreshing dip in our clean and well-maintained swimming pool.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="enrollment">
+        <div class="container">
+            <h2>Enroll Now</h2>
+            <p>Join XYZ College and start your journey towards a bright future. Click the button below to enroll.</p>
+            <button>Enroll Me</button>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <h2>Student Testimonials</h2>
+            <div class="testimonial">
+                <p>"XYZ College has provided me with an excellent education and numerous opportunities to grow. The faculty are supportive and the facilities are top-notch." - John Doe</p>
+            </div>
+            <div class="testimonial">
+                <p>"I am grateful for the comprehensive curriculum and hands-on experience I gained at XYZ College. It has prepared me well for my career." - Jane Smith</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Office Hours: Monday - Friday, 9:00 AM - 5:00 PM</p>
+            <p>Have questions? Reach out to us!</p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>XYZ College &copy; 2024. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
